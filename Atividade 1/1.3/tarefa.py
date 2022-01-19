@@ -1,11 +1,21 @@
-def eh_primo(number):
-	for i in range(2,number):
-		if(number % i == 0):
-			return False
-	return True
+def eh_primo(num):
+    if num%2 == 0:
+        return False
+    
+    raiz = int(num**0.5)
+
+    
+    for i in range(3,raiz+1,2):
+        if num%i == 0 :
+            return False
+   
+    return True 
 
 
-number = int(input("Digite um numero: "))
-print("Numero digitado: {}.".format(number))
-print("Numero digitado eh primo? {}.".format(eh_primo(number)))
+num = int(input("Digite o numero: "))
+
+print("E primo ? {}".format(eh_primo(num)))
+
+
+
 
