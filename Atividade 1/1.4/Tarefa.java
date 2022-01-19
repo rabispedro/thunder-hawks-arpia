@@ -2,22 +2,22 @@ import java.util.Scanner;
 
 public class Tarefa {
 	public static void main(String[] args) {
-		int number;
+		long number;
 		Scanner in = new Scanner(System.in);
-		
+
 		System.out.printf("Digite um numero: ");
-		number = in.nextInt();
-		int fatorial = fatorial(number);
+		number = in.nextLong();
 	
 		System.out.printf("Numero digitado: " + number + ".\n");
-		System.out.printf("Fatorial deste numero: " + fatorial + ".\n");
+		System.out.printf("Fatorial deste numero: " + fatorial(number) + ".\n");
+		in.close();
 	}
 
-	public static int fatorial(final int number) {
-		int fatorial = 1;
-		for(int i=2; i<=number; i++){
+	public static long fatorial(final long number) {
+		long fatorial = 1;
+		for(long i=2; i<=number; i++)
 			fatorial *= i;
-		}
+
 		return fatorial;
 	}
 }
