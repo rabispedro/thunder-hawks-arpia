@@ -47,3 +47,29 @@ git status
 ```sh
 git restore
 ```
+
+## Comandos de config:
+
+### git-config: command to configure username and contact address in git
+```sh
+git config --global user.name "name"
+
+git config --global user.email "name@name.com.br"
+```
+
+### comando ‘ls’: Lista os arquivos que estão presentes na pasta acessada.
+
+### comando ‘clear’: Limpa o terminal de comando.
+
+### comando ‘cd’:comando cd é utilizado para trocar diretórios.
+```sh
+cd “nome diretório” - serve para abrir.
+```
+
+```sh
+cd .. - retorna o diretório anterior
+```
+
+``` 
+https://docs.google.com/presentation/d/1NTnUuUsKsV3tbGMvZvGjDgnGIOn2JX2WodPvldn1R_Y/edit?usp=sharing 
+```
