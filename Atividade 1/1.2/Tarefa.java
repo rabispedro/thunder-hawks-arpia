@@ -5,16 +5,15 @@ public class Tarefa {
 		Scanner scan = new Scanner(System.in);
 		int maior = 0;
 		int menor = Integer.MAX_VALUE;
-		int i = 0;
+		int contadorNumeros = 0;
 		final int NUMERO_DE_SAIDA = -1;
 		
 		while(true) {
-			i++;
+			contadorNumeros++;
 			
 			int numerosDigitados;
-			
 			do{
-				System.out.print("Digite o " + i + "-esimo numero natural: ");
+				System.out.print("Digite o " + contadorNumeros + "-esimo numero natural: ");
 				numerosDigitados = scan.nextInt();
 			}while(numerosDigitados < NUMERO_DE_SAIDA);
 			
@@ -24,8 +23,13 @@ public class Tarefa {
 			menor = (numerosDigitados < menor) ? numerosDigitados : menor;
 		}
 
-		System.out.println("O menor numero natural digitado foi " + menor + "!");
-		System.out.println("O maior numero natural digitado foi " + maior + "!");
+		if(contadorNumeros == 1){
+			System.out.printf("Nenhum numero valido foi digitado!\n");
+		}else {
+			System.out.printf("O menor numero natural digitado foi " + menor + "!\n");
+			System.out.printf("O maior numero natural digitado foi " + maior + "!\n");
+		}
+
 		scan.close();
 	}
 }

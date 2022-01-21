@@ -1,19 +1,30 @@
-numero = -2
+from sys import maxsize
+
+numero
 maior = 0
-menor = 5000
-cond = True
+menor = maxsize
+contadorNumeros = 0
 NUMERO_DE_SAIDA = -1
 
-while(cond == True):
+while(True):
+	contadorNumeros += 1
+	
+	#	Reinicia o valor do numero
+	numero = NUMERO_DE_SAIDA - 1
+
 	while(numero < NUMERO_DE_SAIDA):
 		numero = int(input("Digite um numero: "))
 
 	if(numero == NUMERO_DE_SAIDA):
-		cond = False
-	elif(numero > maior):
+		break
+
+	if(numero > maior):
 		maior = numero
-	elif(numero < menor):
+	if(numero < menor):
 		menor = numero
 
-print("O menor numero natural digitado foi " + str(menor))
-print("O maior numero natural digitado foi " + str(maior))
+if contadorNumeros == 1:
+	print("Nenhum valor valido foi digitado!")
+else:
+	print("O menor numero natural digitado foi " + str(menor))
+	print("O maior numero natural digitado foi " + str(maior))
