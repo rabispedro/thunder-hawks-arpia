@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
-public class ExercicioUm {
+public class Tarefa {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int maiorNumero = 0;
+		final int QUANTIDADE_REPETICOES = 5;
 
-		for(int i=1; i<= 5; i++) {
+		for(int i=1; i<=QUANTIDADE_REPETICOES; i++) {
 			int numerosDigitados;
 			
 			do {

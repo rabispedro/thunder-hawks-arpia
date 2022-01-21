@@ -10,9 +10,13 @@ programa {
 		escreva("Esse numero é primo? ", ehPrimo(num))
 	}
 
-	funcao logico ehPrimo(inteiro num) {
+	funcao logico ehPrimo(const inteiro num) {
+		se(num == 2) {
+			retorne verdadeiro
+		}
+
 		se(num%2 == 0){
-				retorne falso
+			retorne falso
 		}
 
 		inteiro raiz

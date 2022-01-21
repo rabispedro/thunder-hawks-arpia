@@ -5,11 +5,15 @@ public class Tarefa {
 		double pcGasolina, pcAlcool, calculoDiferenca;
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Informe o preco da Gasolina: ");
-		pcGasolina = Double.parseDouble(scanner.next());
+		do{
+			System.out.print("Informe o preco da Gasolina: ");
+			pcGasolina = Double.parseDouble(scanner.next());
+		}while(pcGasolina <= 0);
 
-		System.out.print("Informe o preco do Alcool: ");
-		pcAlcool = Double.parseDouble(scanner.next());
+		do{
+			System.out.print("Informe o preco do Alcool: ");
+			pcAlcool = Double.parseDouble(scanner.next());
+		}while(pcAlcool <= 0);
 
 		calculoDiferenca = pcAlcool / pcGasolina;
 

@@ -8,7 +8,7 @@ programa {
 		escreva("O fatorial do numero ", numero, " eh ", numeroFatorial(numero))
 	}
 
-	funcao inteiro numeroFatorial(inteiro num) {
+	funcao inteiro numeroFatorial(const inteiro num) {
 		inteiro fatorial = 1
 		para(inteiro i=2; i<=num; i++){
 			fatorial *= i

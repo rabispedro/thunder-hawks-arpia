@@ -1,12 +1,16 @@
 programa {
 	funcao inicio() {
 		real pcGasolina, pcAlcool, calculoDiferenca
+		
+		faca{
+			escreva("Informe o preço da Gasolina: ")
+			leia(pcGasolina)
+		}enquanto(pcGasolina <= 0)
 
-		escreva("Informe o preço da Gasolina: ")
-		leia(pcGasolina)
-
-		escreva("Informe o preço do Alcool: ")
-		leia(pcAlcool)
+		faca {
+			escreva("Informe o preço do Alcool: ")
+			leia(pcAlcool)
+		}enquanto(pcAlcool <= 0)
 
 		calculoDiferenca = pcAlcool / pcGasolina
 		

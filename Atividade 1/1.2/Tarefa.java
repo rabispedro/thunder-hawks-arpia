@@ -1,21 +1,25 @@
 import java.util.Scanner;
 
-public class ExercicioDois {
-	public static void main(String[] args) {	
+public class Tarefa {
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int maior = 0;
 		int menor = Integer.MAX_VALUE;
 		int i = 0;
+		final int NUMERO_DE_SAIDA = -1;
 		
 		while(true) {
 			i++;
 			
-			System.out.print("Digite o " + i + "-esimo numero natural: ");
-			int numerosDigitados = scan.nextInt();
+			int numerosDigitados;
 			
-			if(numerosDigitados == -1) break;        
+			do{
+				System.out.print("Digite o " + i + "-esimo numero natural: ");
+				numerosDigitados = scan.nextInt();
+			}while(numerosDigitados < NUMERO_DE_SAIDA);
+			
+			if(numerosDigitados == NUMERO_DE_SAIDA) break;
 	
-			numerosDigitados = (numerosDigitados < -1) ? 0 : numerosDigitados;
 			maior = (numerosDigitados > maior) ? numerosDigitados : maior;
 			menor = (numerosDigitados < menor) ? numerosDigitados : menor;
 		}
