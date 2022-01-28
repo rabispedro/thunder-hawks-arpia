@@ -72,4 +72,18 @@ FROM
 
 -- 5) Retornar a quantidade de alunos de cada sexo por turma
 
+SELECT
+	trm.nome as turma,
+(SELECT COUNT(*) 
+ FROM 
+ 	tb_aluno 
+ WHERE 
+ 	id_turma = trm.id AND sexo = 'masculino') AS masculino,
+(SELECT COUNT(*) 
+ FROM 
+ 	tb_aluno 
+ WHERE 
+ 	id_turma = trm.id AND sexo = 'feminino') AS feminino
+ FROM tb_turma trm;
 
+ -- FUNCIONANDO NA ATUALIZAÇÃO FEITA NO MOCK.SQL
