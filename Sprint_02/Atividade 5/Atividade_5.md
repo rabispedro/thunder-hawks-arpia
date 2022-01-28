@@ -1,4 +1,4 @@
-# ATIVIDADE 08 :memo:
+# ATIVIDADE 05 :memo:
 ## API REST E API SOAP
 
 ### Pedro Rabis (PH), Carlito e João Lima
@@ -6,7 +6,7 @@
 
 ### Alert: o conteúdo somente pode ser visualizado por contas que pertencem ao dominio "@arpiatecnologia.com.br"
 
-#### API **REST*
+#### API **REST**
     Apresentado por Pedro Rabis(PH)
 
 #### API **SOAP**
