@@ -6,7 +6,7 @@
 
 ### Alert: o conteúdo somente pode ser visualizado por contas que pertencem ao dominio "@arpiatecnologia.com.br"
 
-#### API ***REST*
+#### API **REST*
     Apresentado por Pedro Rabis(PH)
 
 #### API **SOAP**
