@@ -5,7 +5,10 @@ SELECT
 		tb_aluno.nome
 FROM
 		tb_aluno,
+INNER JOIN
 		tb_turma
+ON 
+		tb_turma.id = tb_aluno.id_turma
 ORDER BY
 		tb_aluno.id_turma,
 		tb_aluno.nome
@@ -23,11 +26,15 @@ WHERE
 -- 3) Retornar as especialidades dos professores que possuem turmas
 
 SELECT
-	tb_especialidade.nome
+	tb_especialidade.nome,
+    tb_professor.nome
 FROM
 	tb_especialidade,
-	tb_professor,
 	tb_turma
+INNER JOIN
+	tb_professor
+ON
+	tb_professor.id = tb_turma.id_professor
 WHERE
 	tb_turma.id_professor is not NULL AND
 	tb_turma.id_professor = tb_professor.id AND
