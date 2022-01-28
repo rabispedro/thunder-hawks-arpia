@@ -5,13 +5,18 @@ CREATE TABLE tb_especialidade (
 		PRIMARY KEY(id)
 );
 
+CREATE TABLE tb_especialidade_professor (
+  		id SERIAL UNIQUE NOT NULL,
+  		id_especialidade INT NOT NULL,
+  		id_professor INT not null
+);
+
 CREATE TABLE tb_professor (
 		id SERIAL UNIQUE NOT NULL,
-		id_especialidade INT REFERENCES tb_especialidade(id),
 		nome TEXT NOT NULL,
 		data_nascimento TIMESTAMP NOT NULL,
 	
-	PRIMARY KEY(id)
+		PRIMARY KEY(id)
 );
 
 CREATE TABLE tb_turma (
@@ -45,18 +50,37 @@ VALUES
 	('Redação'), ('Educação Física'), ('Filosofia'),
 		('Sociologia');
 
-INSERT INTO tb_professor(id_especialidade, nome,data_nascimento)
+INSERT INTO tb_professor(nome,data_nascimento)
 VALUES
-	(1, 'Macy Shannon','1956-05-15 00:17:28'),
-	(2, 'Basia Franklin','1980-08-31 19:33:36'),
-	(3, 'Nasim Reeves','1996-05-27 14:06:16'),
-	(4, 'Ronan Houston','1970-06-20 18:38:44'),
-	(5, 'Phoebe Burks','1965-08-19 23:46:13'),
-	(6, 'Iola Luna','1940-02-18 18:06:42'),
-	(7, 'Alan Swanson','1958-04-15 21:12:01'),
-	(8, 'Kiara Clayton','1979-06-08 02:55:20'),
-	(9, 'Malcolm Hanson','1989-02-21 18:07:46'),
-	(10, 'Joel Emerson','1990-12-28 00:26:40');
+	( 'Macy Shannon','1956-05-15 00:17:28'),
+	( 'Basia Franklin','1980-08-31 19:33:36'),
+	( 'Nasim Reeves','1996-05-27 14:06:16'),
+	( 'Ronan Houston','1970-06-20 18:38:44'),
+	( 'Phoebe Burks','1965-08-19 23:46:13'),
+	( 'Iola Luna','1940-02-18 18:06:42'),
+	( 'Alan Swanson','1958-04-15 21:12:01'),
+	( 'Kiara Clayton','1979-06-08 02:55:20'),
+	( 'Malcolm Hanson','1989-02-21 18:07:46'),
+	( 'Joel Emerson','1990-12-28 00:26:40');
+    
+INSERT INTO tb_especialidade_professor (id_especialidade, id_professor)
+VALUES
+	(1, 1),
+    (5, 1),
+    (6, 1),
+	(2, 2),
+    (9, 2),
+    (10, 2),
+	(3, 3),
+	(4, 4),
+    (7, 4),
+	(5, 5),
+	(6, 6),
+	(7, 7),
+    (4, 7),
+	(8, 8),
+	(9, 9),
+	(10, 10);
 
 INSERT INTO tb_turma(id_professor,nome,turno,serie)
 VALUES
