@@ -61,7 +61,8 @@ VALUES
 	( 'Alan Swanson','1958-04-15 21:12:01'),
 	( 'Kiara Clayton','1979-06-08 02:55:20'),
 	( 'Malcolm Hanson','1989-02-21 18:07:46'),
-	( 'Joel Emerson','1990-12-28 00:26:40');
+	( 'Joel Emerson','1990-12-28 00:26:40'),
+    ( 'Joaozin Rabis', '2000-09-24 12:35:00');
     
 INSERT INTO tb_especialidade_professor (id_especialidade, id_professor)
 VALUES
@@ -93,7 +94,8 @@ VALUES
 	(4,'2B','noturno','segunda_serie'),
 	(3,'1C','vespertino','primeira_serie'),
 	(2,'6A','matutino','sexta_serie'),
-	(1,'5B','noturno','quinta_serie');
+	(1,'5B','noturno','quinta_serie'),
+    (11,'6B','matutino','sexta_serie');
 
 INSERT INTO tb_aluno (id_turma,nome,matricula,nome_pai,nome_mae,sexo,data_nascimento,data_matricula)
 VALUES
