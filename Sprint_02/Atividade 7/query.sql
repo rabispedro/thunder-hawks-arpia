@@ -4,7 +4,7 @@ SELECT
 		tb_aluno.id_turma,
 		tb_aluno.nome
 FROM
-		tb_aluno,
+		tb_aluno
 INNER JOIN
 		tb_turma
 ON 
