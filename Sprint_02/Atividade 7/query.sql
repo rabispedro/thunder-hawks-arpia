@@ -53,20 +53,19 @@ ON
 
 -- 4) Retornar a idade média dos professores que possuem turma
 
-WITH tb_temporaria (idade)AS
+WITH tb_temporaria (idade) AS
 (
-SELECT 
+	SELECT 
 	EXTRACT(year FROM age(data_nascimento))
     FROM 
-  		tb_professor,
-  		tb_turma
+  		tb_professor
   	WHERE
-		tb_turma.id_professor = tb_professor.id
+		ID IN (SELECT id_professor FROM tb_turma)
 )
 SELECT 
 	AVG(idade) AS "Media idade dos professores que possuem turmas" 
 FROM 
-	tb_temporaria; 
+	tb_temporaria;
 
 -- FUNCIONANDO NA ATUALIZAÇÃO FEITA NO MOCK.SQL
 
