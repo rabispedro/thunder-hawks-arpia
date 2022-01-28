@@ -17,13 +17,18 @@ ORDER BY
 -- FUNCIONANDO NA ATUALIZAÇÃO FEITA NO MOCK.SQL
 
 -- 2) Retornar as turmas em que não existem alunos
-SELECT
-		tb_turma.nome
-FROM
-		tb_aluno,
-		tb_turma
-WHERE
-	tb_aluno.id_turma is NULL;
+SELECT 
+	turma.id, 
+    turma.nome, 
+    turma.turno 
+FROM 
+	tb_turma turma
+WHERE 
+	ID NOT IN 
+    	(SELECT 
+         	id_turma 
+         FROM 
+         	tb_aluno);
 
 -- FUNCIONANDO NA ATUALIZAÇÃO FEITA NO MOCK.SQL
 
