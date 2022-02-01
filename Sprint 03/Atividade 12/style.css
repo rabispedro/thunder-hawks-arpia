@@ -1,38 +1,43 @@
 * {
-    margin: 0;
-    display: flex;
+  padding: 0px;
+  margin: 0px;
 }
 
-.menu {
-    top: 1px;
-    left: 0px;
-    width: 98px;
-    height: 100%;
-    background: #af2b2b 0% 0% no-repeat padding-box;
-    opacity: 1;
-    padding: 110px 0 0 10px;
+body {
+  font-family: arial;
+  background-color: #f5f6fa;
 }
 
-.buttons {
-    padding-left: 0px;
-    display: table-column;
+a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding-block: 12px;
 }
 
-#button {
-    padding-top: 10px;
+a :hover {
+  background-color: #2fcc71;
 }
 
-.header {
-    width: 100%;
-    height: 98px;
-    background-color: red;
+.itens_menu {
+  padding-top: 20px;
+  list-style: none;
 }
 
-.perfil {
-    display: flex;
-    width: 140px;
-    height: 40px;
-    margin: 15px 0 15px 1050px;
-    padding: 5px 20px 5px 20px;
+nav {
+  top: 1px;
+  left: 0px;
+  width: 98px;
+  height: 1080px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
 }
 
+header {
+  top: 0px;
+  left: 99px;
+  width: 1821px;
+  height: 98px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
