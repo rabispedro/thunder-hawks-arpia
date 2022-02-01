@@ -8,11 +8,19 @@ public class Tarefa {
 		do{
 			System.out.print("Informe o preco da Gasolina: ");
 			pcGasolina = Double.parseDouble(scanner.next());
+			
+			if(pcGasolina <= 0)
+			System.out.print("Valor invalido: numero digitado menor que 0.\n");
+			
 		}while(pcGasolina <= 0);
 
 		do{
 			System.out.print("Informe o preco do Alcool: ");
 			pcAlcool = Double.parseDouble(scanner.next());
+			
+			if(pcAlcool <= 0)
+			System.out.print("Valor invalido: numero digitado menor que 0.\n");
+			
 		}while(pcAlcool <= 0);
 
 		calculoDiferenca = pcAlcool / pcGasolina;

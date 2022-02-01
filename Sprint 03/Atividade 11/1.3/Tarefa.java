@@ -5,8 +5,15 @@ public class Tarefa {
 		long numero;
 		Scanner scanner = new Scanner(System.in);
 
+        do { 
+
 		System.out.print("Digite um numero: ");
 		numero = scanner.nextLong();
+         if(numero < 0)
+          System.out.print("Valor invalido: numero digitado menor que 0.\n");
+    
+
+        } while (numero < 0);
 
 		System.out.println("Numero digitado: " + numero);
 		System.out.println("Eh primo? " + primo(numero));

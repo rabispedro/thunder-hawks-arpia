@@ -1,20 +1,24 @@
 import java.util.Scanner;
-
 public class Tarefa {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int maior = 0;
-		int menor = Integer.MAX_VALUE;
+		long maior = 0;
+		long menor = Integer.MAX_VALUE;
 		int contadorNumeros = 0;
 		final int NUMERO_DE_SAIDA = -1;
 		
 		while(true) {
 			contadorNumeros++;
 			
-			int numerosDigitados;
+			long numerosDigitados = 0;
 			do{
 				System.out.print("Digite o " + contadorNumeros + "-esimo numero natural: ");
-				numerosDigitados = scan.nextInt();
+				numerosDigitados = scan.nextLong();
+			if(numerosDigitados <= -2){
+			    
+			    System.out.print("Valor invalido: numero digitado menor que 0 e diferente de -1.\n");
+			}	
+				
 			}while(numerosDigitados < NUMERO_DE_SAIDA);
 			
 			if(numerosDigitados == NUMERO_DE_SAIDA) break;

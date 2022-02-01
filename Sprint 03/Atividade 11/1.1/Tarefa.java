@@ -1,18 +1,22 @@
 import java.util.Scanner;
 
-public class Tarefa {
+class Tarefa {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int maiorNumero = 0;
+		long maiorNumero = 0;
 		final int QUANTIDADE_REPETICOES = 5;
 
 		for(int i=1; i<=QUANTIDADE_REPETICOES; i++) {
-			int numerosDigitados;
+			long numerosDigitados;
 			
-			do {
+			System.out.print("Digite o " + i + "-esimo numero natural: ");
+				numerosDigitados = scan.nextLong();
+			
+			while(numerosDigitados < 0){
+				System.out.print("Valor invalido: numero digitado menor que 0.\n");
 				System.out.print("Digite o " + i + "-esimo numero natural: ");
-				numerosDigitados = scan.nextInt();
-			}while(numerosDigitados < 0);
+				numerosDigitados = scan.nextLong();
+			}
 			
 			if(numerosDigitados > maiorNumero) maiorNumero = numerosDigitados;
 		}
