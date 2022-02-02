@@ -14,3 +14,6 @@
 
  ### Scrum Master(Sprint_02 - 24/01 até 28/01):
  @rabispedro :wrench:
+
+ ### Scrum Master(Sprint_03 - 31/01 até 04/02):
+ @carlito :building_construction:
