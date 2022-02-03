@@ -1,10 +1,9 @@
 package com.hawks.thunder.thunderhawks.services;
 
-import java.util.Optional;
-
 import com.hawks.thunder.thunderhawks.dtos.UserDTO;
 import com.hawks.thunder.thunderhawks.entities.User;
 import com.hawks.thunder.thunderhawks.repositories.UserRepository;
+import com.hawks.thunder.thunderhawks.services.exceptions.ObjectNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,27 +16,39 @@ public class UserService {
 	public UserRepository userRepository;
 
 	public Page<UserDTO> findAllUsers(Pageable pageable) {
-		Page<User> users = this.userRepository.findAll(pageable);
+		final Page<User> users = this.userRepository.findAll(pageable);
 		return users.map(currentUser -> new UserDTO(currentUser));
 	}
 
 	public UserDTO findUserById(Long id) {
-		Optional<User> user = this.userRepository.findById(id);
+		final User user = this.userRepository.findById(id)
+			.orElseThrow(() -> (
+				new ObjectNotFoundException(
+					"User not found! " +
+					"Id: " + id + "."
+				)
+			)
+		);
+
 		return new UserDTO(user);
 	}
 
 	public UserDTO createUser(UserDTO userDto) {
-		User user = this.userRepository.save(userDto.updateUser(new User()));
+		final User user = this.userRepository.save(userDto.updateUser(new User()));
 		return new UserDTO(user);
 	}
 
 	public UserDTO updateUser(Long id, UserDTO userDto) {
-		User user = this.userRepository.findById(id).get();
+		User user = this.userRepository.findById(id)
+			.orElseThrow(() -> (
+				new ObjectNotFoundException(
+					"User not found! " +
+					"Id: " + id + "."
+				)
+			)
+		);
 
-		if(user == null) {
-			throw new RuntimeException();
-		}
-
+		System.out.print(user);
 		user = userDto.updateUser(user);
 		
 		User updatedUser = this.userRepository.save(user);
@@ -45,11 +56,14 @@ public class UserService {
 	}
 
 	public UserDTO deleteUser(Long id) {
-		User user = this.userRepository.findById(id).get();
-
-		if(user == null) {
-			throw new RuntimeException();
-		}
+		final User user = this.userRepository.findById(id)
+			.orElseThrow(() -> (
+				new ObjectNotFoundException(
+					"User not found! " +
+					"Id: " + id + "."
+				)
+			)
+		);
 
 		this.userRepository.delete(user);
 
