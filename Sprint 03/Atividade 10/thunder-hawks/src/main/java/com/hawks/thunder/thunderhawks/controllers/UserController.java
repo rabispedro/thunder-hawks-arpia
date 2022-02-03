@@ -51,5 +51,4 @@ public class UserController {
 		UserDTO user = this.userService.deleteUser(id);
 		return ResponseEntity.ok(user);
 	}
-
 }

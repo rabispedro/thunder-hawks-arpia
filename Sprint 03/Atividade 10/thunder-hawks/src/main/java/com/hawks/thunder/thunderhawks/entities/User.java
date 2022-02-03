@@ -29,14 +29,18 @@ public class User implements Serializable {
 	@Column(name = "data_nascimento")
 	private Date dataNascimento;
 
+	@Column(name = "photoUrl")
+	private String photoUrl;
+
 	public User() {
 	}
 
-	public User(Long id, String nome, String sobrenome, Date dataNascimento) {
+	public User(Long id, String nome, String sobrenome, Date dataNascimento, String photoUrl) {
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
+		this.photoUrl = photoUrl;
 	}
 
 	public Long getId() {
@@ -71,6 +75,14 @@ public class User implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -100,10 +112,11 @@ public class User implements Serializable {
 	public String toString() {
 		return
 			"User: {\n" +
-				"\tid: " + id + ",\n" +
-				"\tnome: " + nome + ",\n" +
-				"\tsobrenome: " + sobrenome + ",\n" +
-				"\tdataNascimento: " + dataNascimento + "\n" +
+				"\tid: " + this.id + ",\n" +
+				"\tnome: " + this.nome + ",\n" +
+				"\tsobrenome: " + this.sobrenome + ",\n" +
+				"\tdataNascimento: " + this.dataNascimento + ",\n" +
+				"\tphotoUrl: " + this.photoUrl + "\n" +
 			"}"
 		;
 	}

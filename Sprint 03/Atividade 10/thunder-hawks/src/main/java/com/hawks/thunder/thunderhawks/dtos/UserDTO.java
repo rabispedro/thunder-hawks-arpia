@@ -9,20 +9,23 @@ public class UserDTO {
 	private String nome;
 	private String sobrenome;
 	private Date dataNascimento;
+	private String photoUrl;
 	
 	public UserDTO() {
 	}
 
-	public UserDTO(String nome, String sobrenome, Date dataNascimento) {
+	public UserDTO(String nome, String sobrenome, Date dataNascimento, String photoUrl) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.dataNascimento = dataNascimento;
+		this.photoUrl = photoUrl;
 	}
 
 	public UserDTO(User user) {
 		this.nome = user.getNome();
 		this.sobrenome = user.getSobrenome();
 		this.dataNascimento = user.getDataNascimento();
+		this.photoUrl = user.getPhotoUrl();
 	}
 
 	public UserDTO(Optional<User> user) {
@@ -37,6 +40,10 @@ public class UserDTO {
 		if(user.get().getDataNascimento() != null) {
 			this.dataNascimento = user.get().getDataNascimento();
 		}
+
+		if(user.get().getPhotoUrl() != null) {
+			this.photoUrl = user.get().getPhotoUrl();
+		}
 	}
 
 	public User updateUser(User user){
@@ -50,6 +57,10 @@ public class UserDTO {
 
 		if(this.dataNascimento != null) {
 			user.setDataNascimento(this.dataNascimento);
+		}
+
+		if(this.photoUrl != null) {
+			user.setPhotoUrl(this.photoUrl);
 		}
 
 		return user;
@@ -77,5 +88,13 @@ public class UserDTO {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 }
