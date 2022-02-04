@@ -82,7 +82,7 @@ export const Title = styled.div`
   padding-bottom: 30px;
 `;
 
-export const FormArea = styled.div`
+export const FormArea = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -151,7 +151,7 @@ export const CreateButton = styled.input`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 10px rgba(44, 208, 113, 0.8);
+    box-shadow: 0px 0px 12px rgba(44, 208, 113, 1);
   }
 `;
 
@@ -171,7 +171,7 @@ export const DeleteButton = styled.input`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 10px rgba(255, 122, 39, 0.8);
+    box-shadow: 0px 0px 12px rgba(255, 122, 39, 1);
   }
 `;
 
@@ -190,6 +190,6 @@ export const CancelButton = styled.input`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
   }
 `;

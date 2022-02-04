@@ -36,7 +36,7 @@ const LoginPage: React.FC = () => {
         <LoginArea>
           <LoginTitle>LOGIN</LoginTitle>
 
-          <FormArea>
+          <FormArea autoComplete="off">
             <LabelLogin>Login</LabelLogin>
             <InputLogin
               name="inputLogin"
@@ -46,6 +46,7 @@ const LoginPage: React.FC = () => {
             ></InputLogin>
             <LabelLogin>Senha</LabelLogin>
             <InputLogin
+              type="password"
               name="inputPassword"
               value={inputPassword}
               onInput={(e: any) => setInputPassword(e.target.value)}

@@ -17,6 +17,10 @@ export default createGlobalStyle`
     outline: 0;
     font-family: 'Roboto', sans-serif;
   }
+  
+  a {
+    text-decoration: none;
+  }
 
   .DontShowIt {
     display: none !important;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Person, ListUl, BoxArrowUpLeft } from "styled-icons/bootstrap";
+import { Props } from ".";
 
 export const Container = styled.div`
   grid-area: AM;
@@ -15,20 +16,45 @@ export const Container = styled.div`
   border-right: 1px solid var(--default-menu-bar-border);
 `;
 
-export const UserIcon = styled(Person)`
+export const UserIcon = styled(Person)<Props>`
   width: 33px;
-  color: var(--default-menu-bar-icon02);
+  color: ${(props) =>
+    props.currentSelectedPath.indexOf("user") > 0
+      ? "var(--THEME_COLOR_007)"
+      : "var(--THEME_COLOR_003)"};
   margin: 20px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--THEME_COLOR_002);
+  }
 `;
 
-export const ListIcon = styled(ListUl)`
+export const ListIcon = styled(ListUl)<Props>`
   width: 33px;
-  color: var(--default-menu-bar-icon02);
+  color: ${(props) =>
+    props.currentSelectedPath.indexOf("list") > 0 ||
+    props.currentSelectedPath === "/"
+      ? "var(--THEME_COLOR_007)"
+      : "var(--THEME_COLOR_003)"};
   margin: 20px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--THEME_COLOR_002);
+  }
 `;
 
-export const ExitIcon = styled(BoxArrowUpLeft)`
+export const ExitIcon = styled(BoxArrowUpLeft)<Props>`
   width: 30px;
-  color: var(--default-menu-bar-icon02);
+  color: ${(props) =>
+    props.currentSelectedPath.indexOf("login") > 0
+      ? "var(--THEME_COLOR_007)"
+      : "var(--THEME_COLOR_003)"};
   margin: 20px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--THEME_COLOR_002);
+  }
 `;

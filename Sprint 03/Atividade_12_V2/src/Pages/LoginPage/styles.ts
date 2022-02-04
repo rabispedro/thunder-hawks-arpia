@@ -31,7 +31,7 @@ export const LoginTitle = styled.div`
   font-size: 18px;
 `;
 
-export const FormArea = styled.div`
+export const FormArea = styled.form`
   display: flex;
   flex-direction: column;
   background: var(--Login-body);

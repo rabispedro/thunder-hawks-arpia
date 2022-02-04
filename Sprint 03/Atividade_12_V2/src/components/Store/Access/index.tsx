@@ -17,6 +17,7 @@ export const loadUser = () => {
 export const saveUser = (dataUser: string) => {
   try {
     localStorage.setItem(THUNDER_HAWKS_USER, dataUser);
+    window.location.reload();
   } catch (e) {
     console.error("Sem Usuário logado");
   }
@@ -25,6 +26,7 @@ export const saveUser = (dataUser: string) => {
 export const deleteUser = () => {
   try {
     localStorage.removeItem(THUNDER_HAWKS_USER);
+    window.location.reload();
   } catch (e) {
     console.error("Nao foi possivel remover o Usuário.");
   }

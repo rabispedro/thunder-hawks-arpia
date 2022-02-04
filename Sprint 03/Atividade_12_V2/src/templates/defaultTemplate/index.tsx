@@ -8,23 +8,35 @@ import UserInformationBar from "../../components/UserInformationBar";
 import MenuBar from "../../components/MenuBar";
 
 import SystemRoutes from "../../Routes/SystemRoutes";
+import { hasUserAuthenticated } from "../../components/Store/Access";
+import LoginPage from "../../Pages/LoginPage";
 
 const defaultTemplate: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <>
-        <Grid>
-          <LogoThunderHawks />
-          <UserInformationBar />
-          <MenuBar />
-          <Container>
-            <SystemRoutes />
-          </Container>
-        </Grid>
-        <GlobalStyles />
-      </>
-    </BrowserRouter>
-  );
+  var isAuthenticated = hasUserAuthenticated();
+
+  if (!isAuthenticated) {
+    return (
+      <BrowserRouter>
+        <LoginPage />
+      </BrowserRouter>
+    );
+  } else {
+    return (
+      <BrowserRouter>
+        <>
+          <Grid>
+            <LogoThunderHawks />
+            <UserInformationBar />
+            <MenuBar />
+            <Container>
+              <SystemRoutes />
+            </Container>
+          </Grid>
+          <GlobalStyles />
+        </>
+      </BrowserRouter>
+    );
+  }
 };
 
 export default defaultTemplate;
