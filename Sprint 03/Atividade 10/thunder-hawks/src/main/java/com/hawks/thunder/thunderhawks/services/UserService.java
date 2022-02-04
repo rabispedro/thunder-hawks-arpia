@@ -9,17 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
 	@Autowired
 	public UserRepository userRepository;
 
+	@Transactional(readOnly = true)
 	public Page<UserDTO> findAllUsers(Pageable pageable) {
 		final Page<User> users = this.userRepository.findAll(pageable);
 		return users.map(currentUser -> new UserDTO(currentUser));
 	}
 
+	@Transactional(readOnly = true)
 	public UserDTO findUserById(Long id) {
 		final User user = this.userRepository.findById(id)
 			.orElseThrow(() -> (
@@ -33,11 +36,13 @@ public class UserService {
 		return new UserDTO(user);
 	}
 
+	@Transactional
 	public UserDTO createUser(UserDTO userDto) {
 		final User user = this.userRepository.save(userDto.updateUser(new User()));
 		return new UserDTO(user);
 	}
 
+	@Transactional
 	public UserDTO updateUser(Long id, UserDTO userDto) {
 		User user = this.userRepository.findById(id)
 			.orElseThrow(() -> (
@@ -55,6 +60,7 @@ public class UserService {
 		return new UserDTO(updatedUser);
 	}
 
+	@Transactional
 	public UserDTO deleteUser(Long id) {
 		final User user = this.userRepository.findById(id)
 			.orElseThrow(() -> (
