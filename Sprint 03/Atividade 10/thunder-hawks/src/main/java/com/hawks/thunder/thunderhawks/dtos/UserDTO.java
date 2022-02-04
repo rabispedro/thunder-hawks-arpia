@@ -1,13 +1,15 @@
 package com.hawks.thunder.thunderhawks.dtos;
 
 import java.util.Date;
-import java.util.Optional;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.hawks.thunder.thunderhawks.entities.User;
 
 public class UserDTO {
+	private Long id;
 	private String nome;
 	private String sobrenome;
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dataNascimento;
 	private String photoUrl;
 	
@@ -22,29 +24,30 @@ public class UserDTO {
 	}
 
 	public UserDTO(User user) {
+		this.id = user.getId();
 		this.nome = user.getNome();
 		this.sobrenome = user.getSobrenome();
 		this.dataNascimento = user.getDataNascimento();
 		this.photoUrl = user.getPhotoUrl();
 	}
 
-	public UserDTO(Optional<User> user) {
-		if(user.get().getNome() != null) {
-			this.nome = user.get().getNome();
-		}
-
-		if(user.get().getSobrenome() != null) {
-			this.sobrenome = user.get().getSobrenome();
-		}
-
-		if(user.get().getDataNascimento() != null) {
-			this.dataNascimento = user.get().getDataNascimento();
-		}
-
-		if(user.get().getPhotoUrl() != null) {
-			this.photoUrl = user.get().getPhotoUrl();
-		}
-	}
+//	public UserDTO(Optional<User> user) {
+//		if(user.get().getNome() != null) {
+//			this.nome = user.get().getNome();
+//		}
+//
+//		if(user.get().getSobrenome() != null) {
+//			this.sobrenome = user.get().getSobrenome();
+//		}
+//
+//		if(user.get().getDataNascimento() != null) {
+//			this.dataNascimento = user.get().getDataNascimento();
+//		}
+//
+//		if(user.get().getPhotoUrl() != null) {
+//			this.photoUrl = user.get().getPhotoUrl();
+//		}
+//	}
 
 	public User updateUser(User user){
 		if(this.nome != null) {
@@ -64,6 +67,14 @@ public class UserDTO {
 		}
 
 		return user;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
